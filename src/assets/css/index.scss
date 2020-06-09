@@ -1,0 +1,28 @@
+body, html {
+  margin:0;
+  padding: 0;
+  width: 100vw;
+  height: auto;
+}
+
+.countries-wrapper {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 50px));
+  grid-gap: 25px;
+  justify-content: center;
+  margin: 0 auto;
+  width: 1000px;
+  overflow: hidden;
+}
+
+.country-single {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+
+.country-single img{
+  width: 100%;
+}
