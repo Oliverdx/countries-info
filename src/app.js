@@ -23,7 +23,7 @@ function App(props) {
 
         fetchData();
 
-    }, loading);
+    }, [loading]);
 
     return (
         <div>

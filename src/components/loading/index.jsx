@@ -6,7 +6,7 @@ export default function Loading() {
 
   return (
     <div className="loading">
-      <div class="loadspinning">
+      <div className="loadspinning">
         <div></div>
         <div></div>
         <div></div>
