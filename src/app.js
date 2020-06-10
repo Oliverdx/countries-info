@@ -3,12 +3,14 @@ import React, { useState, useEffect } from 'react';
 //COMPONENTS
 import CountryInfo from './components/country-info/index.jsx';
 import Loading from './components/loading/index.jsx';
+import Header from './components/header/index.jsx';
 
 import './assets/css/index.scss';
 
 function App(props) {
     const [loading, setLoading] = useState(true);
     const [countries, setCountries] = useState({});
+    const [mode, setMode] = useState('light');
 
     useEffect(() => {
 
@@ -36,10 +38,16 @@ function App(props) {
         return elements.map(el => el.name);
     }
 
+    const changeAppMode = () => {
+        const newMode = mode === 'light' ? 'dark' : 'light';
+        setMode(newMode);
+    }
+
     return (
-        <div>
-            {loading ? <Loading /> :
-                <div className="countries-wrapper">
+        loading ? <Loading /> :
+            <div className={`${mode}-mode`}>
+                <Header mode={mode} changeMode={changeAppMode} />
+                <main className="countries-wrapper">
                     {countries.map((country, index) =>
                         <CountryInfo
                             key={index}
@@ -48,8 +56,8 @@ function App(props) {
                         />)
                     }
 
-                </div>}
-        </div>
+                </main>
+            </div>
     );
 }
 
