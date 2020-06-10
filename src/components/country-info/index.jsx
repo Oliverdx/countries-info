@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default function CountryInfo({ data }) {
+export default function CountryInfo({ data, borders }) {
+
+  const formatArray = (array) => {
+    return array.map(el => el.name).join(', ');
+  }
 
   return (
     <div className="country-single">
@@ -13,13 +17,17 @@ export default function CountryInfo({ data }) {
           <p className="native-name"><strong>Native Name: </strong>{data.nativeName}</p>
           <p className="population"><strong>Population: </strong>{data.population}</p>
           <p className="region"><strong>Region: </strong>{data.region}</p>
-          <p className="sub-region"><strong>Sub region</strong>{data.subregion}</p>
+          <p className="sub-region"><strong>Sub region: </strong>{data.subregion}</p>
           <p className="capital"><strong>Capital: </strong>{data.capital}</p>
-          <p className="domain"><strong>Top Level Domain: </strong>{data.topLevelDomain.map(el => el)}</p>
-          <p className="currencies"><strong>Currencies: </strong>{data.currencies.map(el => el.name)}</p>
-          <p className="languages"><strong>Languages: </strong>{data.languages.map(el => el.name)}</p>
+          <p className="domain"><strong>Top Level Domain: </strong>{data.topLevelDomain.join(', ')}</p>
+          <p className="currencies"><strong>Currencies: </strong>{formatArray(data.currencies)}</p>
+          <p className="languages"><strong>Languages: </strong>{formatArray(data.languages)}</p>
         </div>
+        {borders && <div className="border-countries">
+          <strong>Border Countries: </strong>
+          {borders.join(', ')}
+        </div>}
       </div>
-    </div>
+    </div >
   )
 };

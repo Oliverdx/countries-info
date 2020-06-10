@@ -25,13 +25,28 @@ function App(props) {
 
     }, [loading]);
 
+    const borderCountries = (borders) => {
+        const elements = countries.filter(country =>
+            borders.some(el => el === country.alpha3Code)
+        );
+
+        if (elements.length === 0)
+            return false;
+
+        return elements.map(el => el.name);
+    }
+
     return (
         <div>
             {loading ? <Loading /> :
                 <div className="countries-wrapper">
                     {countries.map((country, index) =>
-                        <CountryInfo data={country} key={index} />
-                    )}
+                        <CountryInfo
+                            key={index}
+                            data={country}
+                            borders={borderCountries(country.borders)}
+                        />)
+                    }
 
                 </div>}
         </div>
