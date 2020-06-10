@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
+//COMPONENTS
+import CountryInfo from './components/country-info/index.jsx';
 import Loading from './components/loading/index.jsx';
 
 import './assets/css/index.scss';
@@ -20,18 +23,30 @@ function App(props) {
 
         fetchData();
 
-    }, loading);
+    }, [loading]);
+
+    const borderCountries = (borders) => {
+        const elements = countries.filter(country =>
+            borders.some(el => el === country.alpha3Code)
+        );
+
+        if (elements.length === 0)
+            return false;
+
+        return elements.map(el => el.name);
+    }
 
     return (
         <div>
             {loading ? <Loading /> :
                 <div className="countries-wrapper">
                     {countries.map((country, index) =>
-                        <div className="country-single" key={index}>
-                            <img src={country.flag} />
-                            <h1>Country: {country.name}</h1>
-                        </div>
-                    )}
+                        <CountryInfo
+                            key={index}
+                            data={country}
+                            borders={borderCountries(country.borders)}
+                        />)
+                    }
 
                 </div>}
         </div>
