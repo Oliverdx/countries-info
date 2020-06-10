@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import './assets/css/main.scss';
 
 //COMPONENTS
 import CountryInfo from './components/country-info/index.jsx';
 import Loading from './components/loading/index.jsx';
 import Header from './components/header/index.jsx';
-
-import './assets/css/index.scss';
 
 function App(props) {
     const [loading, setLoading] = useState(true);
