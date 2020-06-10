@@ -1,0 +1,21 @@
+.dark-mode {
+  .site-header{
+    box-shadow: 0 2px 6px #1d2227;
+  }
+}
+
+.site-header {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  box-shadow: 0 2px 6px #CCC;
+}
+
+.change-mode{
+  color: inherit;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 16px;
+}
