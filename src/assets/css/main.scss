@@ -9,17 +9,32 @@ body, html {
   height: auto;
 }
 
+*{
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+h1, h2 {
+  margin: inherit;
+}
+
+button{
+  background: none;
+  border:none;
+  cursor: pointer;
+}
+
 .dark-mode{
   color: $white;
+  background: $very-dark-blue;
 }
 
 .light-mode{
   color: $very-dark-blue;
-}
-
-*{
-  box-sizing: border-box;
-  font-family: 'Nunito Sans', sans-serif;
+  background: $white;
 }
 
 .countries-wrapper {
