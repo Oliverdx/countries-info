@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loading from './components/loading/index.jsx';
 
 import './assets/css/index.scss';
 
@@ -14,7 +15,7 @@ function App(props) {
             const data = await response.json();
 
             setCountries(data);
-            setLoading(false);
+            setTimeout(() => setLoading(false), 1500);
         }
 
         fetchData();
@@ -23,7 +24,7 @@ function App(props) {
 
     return (
         <div>
-            {loading ? <div className="loading-app"><span>Loading...</span></div> :
+            {loading ? <Loading /> :
                 <div className="countries-wrapper">
                     {countries.map((country, index) =>
                         <div className="country-single" key={index}>
