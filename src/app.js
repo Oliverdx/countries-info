@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
+//COMPONENTS
+import CountryInfo from './components/country-info/index.jsx';
 import Loading from './components/loading/index.jsx';
 
 import './assets/css/index.scss';
@@ -27,10 +30,7 @@ function App(props) {
             {loading ? <Loading /> :
                 <div className="countries-wrapper">
                     {countries.map((country, index) =>
-                        <div className="country-single" key={index}>
-                            <img src={country.flag} />
-                            <h1>Country: {country.name}</h1>
-                        </div>
+                        <CountryInfo data={country} key={index} />
                     )}
 
                 </div>}
