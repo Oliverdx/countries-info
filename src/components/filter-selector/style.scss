@@ -31,6 +31,7 @@ $border-radius: 5px;
   position: relative;
   border-radius:$border-radius;
   cursor:pointer;
+  background: #FFF;
 
   
 .region-dropdown-title {
@@ -47,7 +48,7 @@ $border-radius: 5px;
 
   .select-region {
     position: absolute;
-    top: 45px;
+    top: 43px;
     width: 100%;
     padding: 0 30px;
     background: #FFF;

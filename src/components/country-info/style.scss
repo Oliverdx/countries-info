@@ -1,5 +1,7 @@
+@import '../../assets/css/variables.scss';
+
 .backBtn {
-  box-shadow: 0 0 10px #CCC;
+  box-shadow: $shadow-light-mode;
   text-align: center;
   height: 40px;
   line-height: 40px;
@@ -7,6 +9,7 @@
   padding: 0 30px;
   margin-left: 3px;
   cursor:pointer;
+  background: #FFF;
 }
 
 .info-window{
@@ -32,11 +35,12 @@
   }
 
   &:not(.active-country) {
-    box-shadow: 0 0 10px #CCC;
+    box-shadow: $shadow-light-mode;
     border-radius: 5px;
+    background: #FFF;
     overflow: hidden;
     cursor:pointer;
-    transition: ease all 300ms;
+    transition: ease transform 300ms;
 
     &:hover {
       transform: scale(1.05);
@@ -48,15 +52,17 @@
 
     .infos p {
         margin: 5px 0;
+        font-size: 14px;
     }
     
   }
 
   &.active-country {
     align-items: flex-start;
+    margin-top: 50px;
 
     .flag-img{
-      box-shadow: 0 0 10px #CCC;
+      box-shadow: $shadow-light-mode;
     }
 
     .infos {
@@ -69,6 +75,7 @@
 
       p {
         margin: 10px 0;
+        font-size: 16px;
       }
     }
 
@@ -81,7 +88,8 @@
       }
 
       button {
-        box-shadow: 0 0 10px #CCC;
+        box-shadow: $shadow-light-mode;
+        background: #FFF;
         margin:   5px;
         padding: 5px 10px;
         cursor:pointer;

@@ -1,3 +1,5 @@
+@import '../../assets/css/variables.scss';
+
 .dark-mode {
   .site-header{
     box-shadow: 0 2px 6px #1d2227;
@@ -9,8 +11,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
+  padding: $site-padding;
   box-shadow: 0 2px 6px #CCC;
+  background: white;
 }
 
 .change-mode{

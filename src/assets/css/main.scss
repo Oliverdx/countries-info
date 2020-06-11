@@ -39,15 +39,14 @@ ul{
 
 .light-mode{
   color: $very-dark-blue;
-  background: $white;
+  background: $very-light-gray;
 }
 
 .countries-wrapper {
-  padding-top: 50px;
+  padding: $site-padding;
   display: grid;
   grid-template-columns: repeat(4, calc(25% - 50px));
   grid-gap: 80px 0;
   justify-content: space-between;
   margin: 0 auto;
-  width: calc(100% - 60px);
 }
