@@ -12,6 +12,8 @@ function App(props) {
     const [countries, setCountries] = useState({});
     const [countriesList, setCountriesList] = useState({});
     const [mode, setMode] = useState('light');
+    const [countryActive, setCountryActive] = useState('');
+    let infoWindow = countryActive === '' ? true : false;
 
     useEffect(() => {
 
@@ -69,17 +71,25 @@ function App(props) {
         return setCountriesList(filter);
     }
 
+    const handleShowInfo = (country) => {
+        searchCountry(country);
+        setCountryActive(country);
+    }
+
     return (
         loading ? <Loading /> :
             <div className={`${mode}-mode`}>
                 <Header mode={mode} changeMode={changeAppMode} />
-                <FilterSelector searchFilter={searchCountry} regionFilter={filterRegion} />
-                <main className="countries-wrapper">
+                {infoWindow &&
+                    <FilterSelector searchFilter={searchCountry} regionFilter={filterRegion} />}
+                <main className={`countries-wrapper ${infoWindow ? '' : 'info-window'}`} >
                     {countriesList.map((country, index) =>
                         <CountryInfo
                             key={index}
                             data={country}
                             borders={borderCountries(country.borders)}
+                            showInfo={handleShowInfo}
+                            active={countryActive === country.name}
                         />)
                     }
                     {countriesList.length === 0 && <div> Sorry no countries to show</div>}

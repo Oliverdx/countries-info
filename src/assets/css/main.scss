@@ -45,21 +45,9 @@ ul{
 .countries-wrapper {
   padding-top: 50px;
   display: grid;
-  grid-template-columns: repeat(2, calc(50% - 50px));
-  grid-gap: 25px;
-  justify-content: center;
+  grid-template-columns: repeat(4, calc(25% - 50px));
+  grid-gap: 80px 0;
+  justify-content: space-between;
   margin: 0 auto;
-  width: 1000px;
-  overflow: hidden;
-}
-
-.country-single {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
-}
-
-.country-single img{
-  width: 100%;
+  width: calc(100% - 60px);
 }
