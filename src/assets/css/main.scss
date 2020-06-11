@@ -49,17 +49,7 @@ ul{
   grid-gap: 25px;
   justify-content: center;
   margin: 0 auto;
-  width: 1000px;
+  width: calc(100% - 60px);
   overflow: hidden;
-}
 
-.country-single {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
-}
-
-.country-single img{
-  width: 100%;
 }

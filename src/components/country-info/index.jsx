@@ -1,32 +1,75 @@
 import React from 'react';
+import './style.scss';
 
-export default function CountryInfo({ data, borders }) {
+export default function CountryInfo({ data, borders, showInfo, active }) {
 
   const formatArray = (array) => {
     return array.map(el => el.name).join(', ');
   }
 
+  const handleClick = (countryName) => {
+    showInfo(countryName);
+  }
+
+  const showBorder = (border) => {
+    console.log('TODO change country to: ', border);
+  }
+
+  const formatPopulation = (population) => {
+    return population.toLocaleString(Number, { maximumFractionDigits: 3 });
+  };
+
+  const renderCountryInfo = (country) => {
+    let info = [];
+
+    if (active) {
+      info = [
+        { 'Native Name': country.nativeName },
+        { 'Population': formatPopulation(country.population) },
+        { 'Region': country.region },
+        { 'Sub region': country.subregion },
+        { 'Capital': country.capital },
+        { 'Top Level Domain': country.topLevelDomain.join(', ') },
+        { 'Currencies': formatArray(country.currencies) },
+        { 'Languages': formatArray(country.languages) }
+      ];
+
+    } else {
+      info = [
+        { 'Population': formatPopulation(country.population) },
+        { 'Region': country.region },
+        { 'Capital': country.capital }
+      ];
+    }
+
+    return (
+      <div className="infos">
+        {info.map((el, index) =>
+          <p key={index}><strong>{Object.keys(el)[0]}: </strong>{Object.values(el)[0]}</p>
+        )}
+      </div>);
+
+  }
+
   return (
-    <div className="country-single">
-      <div className="country-flag">
-        <img src={data.flag} />
-      </div>
-      <div className="country-info">
-        <h2 className="country-name">Country: {data.name}</h2>
-        <div className="contry-data">
-          <p className="native-name"><strong>Native Name: </strong>{data.nativeName}</p>
-          <p className="population"><strong>Population: </strong>{data.population}</p>
-          <p className="region"><strong>Region: </strong>{data.region}</p>
-          <p className="sub-region"><strong>Sub region: </strong>{data.subregion}</p>
-          <p className="capital"><strong>Capital: </strong>{data.capital}</p>
-          <p className="domain"><strong>Top Level Domain: </strong>{data.topLevelDomain.join(', ')}</p>
-          <p className="currencies"><strong>Currencies: </strong>{formatArray(data.currencies)}</p>
-          <p className="languages"><strong>Languages: </strong>{formatArray(data.languages)}</p>
+    <div className={`country-single ${active ? 'active-country' : ''}`}>
+      {active && <div className="backBtn" onClick={() => showInfo('')}>Back</div>}
+
+      <div className="info-wrapper" onClick={() => handleClick(data.name)}>
+        <div className="country-flag">
+          <img src={data.flag} className="flag-img" />
         </div>
-        {borders && <div className="border-countries">
-          <strong>Border Countries: </strong>
-          {borders.join(', ')}
-        </div>}
+        <div className="country-info">
+          <h2 className="country-name">{data.name}</h2>
+          {renderCountryInfo(data)}
+          {(borders && active) && <div className="border-countries">
+            <strong>Border Countries: </strong>
+            <div className="border-btns">{borders.map((border, index) =>
+              <button key={index} onClick={() => showBorder(border)}>{border}</button>
+            )}</div>
+          </div>}
+        </div>
+
       </div>
     </div >
   )
