@@ -26,46 +26,68 @@
 .country-single {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items:center;
-
-  &.active-country {
-    align-items: flex-start;
-  }
 
   .flag-img{
     width: 100%;
+  }
+
+  &:not(.active-country) {
     box-shadow: 0 0 10px #CCC;
-  }
+    border-radius: 5px;
+    overflow: hidden;
+    cursor:pointer;
+    transition: ease all 300ms;
 
-  .infos {
-    display: grid;
-    grid-template-rows: repeat(5, auto);
-    grid-template-columns: repeat(2, auto);
-    grid-gap: 0 30px;
-    grid-auto-flow: column;
-    margin: 30px 0;
-
-    p {
-      margin: 10px 0;
+    &:hover {
+      transform: scale(1.05);
     }
-  }
 
-  .border-countries {
-    display: flex;
+    .country-info {
+      padding: 15px;
+    }
+
+    .infos p {
+        margin: 5px 0;
+    }
     
-    strong {
-      margin-right: 10px;
-      flex-shrink: 0;
-    }
+  }
 
-    button {
+  &.active-country {
+    align-items: flex-start;
+
+    .flag-img{
       box-shadow: 0 0 10px #CCC;
-      margin:   5px;
-      padding: 5px 10px;
-      cursor:pointer;
     }
 
+    .infos {
+      display: grid;
+      grid-template-rows: repeat(5, auto);
+      grid-template-columns: repeat(2, auto);
+      grid-gap: 0 30px;
+      grid-auto-flow: column;
+      margin: 30px 0;
+
+      p {
+        margin: 10px 0;
+      }
+    }
+
+    .border-countries {
+      display: flex;
+      
+      strong {
+        margin-right: 10px;
+        flex-shrink: 0;
+      }
+
+      button {
+        box-shadow: 0 0 10px #CCC;
+        margin:   5px;
+        padding: 5px 10px;
+        cursor:pointer;
+      }
+
+    }
   }
 
 }
