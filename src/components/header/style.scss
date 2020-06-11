@@ -6,14 +6,22 @@
   }
 }
 
-.site-header {
-  height: 90px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: $site-padding;
+.site-header {  
   box-shadow: 0 2px 6px #CCC;
   background: white;
+  
+  .wrapper{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $site-padding;
+  }
+
+}
+
+.site-title {
+  margin: 0;
 }
 
 .change-mode{

@@ -82,7 +82,7 @@ function App(props) {
                 <Header mode={mode} changeMode={changeAppMode} />
                 {infoWindow &&
                     <FilterSelector searchFilter={searchCountry} regionFilter={filterRegion} />}
-                <main className={`countries-wrapper ${infoWindow ? '' : 'info-window'}`} >
+                <main className={`countries-wrapper ${infoWindow ? '' : 'info-window'} wrapper`} >
                     {countriesList.map((country, index) =>
                         <CountryInfo
                             key={index}

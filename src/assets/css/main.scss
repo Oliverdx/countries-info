@@ -42,6 +42,15 @@ ul{
   background: $very-light-gray;
 }
 
+.dark-mode, .light-mode{
+  height: 100vh;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .countries-wrapper {
   padding: $site-padding;
   display: grid;

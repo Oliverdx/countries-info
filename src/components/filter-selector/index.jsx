@@ -21,7 +21,7 @@ export default function FilterSelector({ searchFilter, regionFilter }) {
   }
 
   return (
-    <div className="search-filter">
+    <div className="search-filter wrapper">
       <input type="search"
         name="country-search"
         id="country-search"

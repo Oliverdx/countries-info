@@ -5,7 +5,7 @@
   text-align: center;
   height: 40px;
   line-height: 40px;
-  border-radius: 5px;
+  border-radius: $border-radius;
   padding: 0 30px;
   margin-left: 3px;
   cursor:pointer;
@@ -36,7 +36,7 @@
 
   &:not(.active-country) {
     box-shadow: $shadow-light-mode;
-    border-radius: 5px;
+    border-radius: $border-radius;
     background: #FFF;
     overflow: hidden;
     cursor:pointer;
@@ -44,6 +44,15 @@
 
     &:hover {
       transform: scale(1.05);
+    }
+
+    .country-name {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .flag-img{
+      box-shadow: 0 0 2px #CCC;
     }
 
     .country-info {
