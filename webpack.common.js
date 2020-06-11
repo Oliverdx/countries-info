@@ -22,12 +22,15 @@ module.exports = {
       }
     }, {
       test: /\.s[ac]ss$/i,
-      use: ExtractTextPlugin.extract(
+      use: [
+        'style-loader',
         {
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          loader: 'css-loader'
+        },
+        {
+          loader: 'sass-loader'
         }
-      )
+      ]
     },
     {
       test: /\.(png|jpg|gif|ttf)$/,
