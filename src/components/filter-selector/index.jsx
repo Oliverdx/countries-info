@@ -22,12 +22,14 @@ export default function FilterSelector({ searchFilter, regionFilter }) {
 
   return (
     <div className="search-filter wrapper">
-      <input type="search"
-        name="country-search"
-        id="country-search"
-        placeholder="Search for a country..."
-        onChange={(evt) => handleSearch(evt)}
-      />
+      <div className="search-wrapper">
+        <input type="search"
+          name="country-search"
+          id="country-search"
+          placeholder="Search for a country..."
+          onChange={(evt) => handleSearch(evt)}
+        />
+      </div>
 
       <div className={`search-region ${dropdown}`}>
         <span className="region-dropdown-title" onClick={() => showDropdown()}>Filter by Region</span>
