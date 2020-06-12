@@ -1,0 +1,58 @@
+@import '../../assets/css/variables.scss';
+
+.dark-mode {
+  .site-header{
+    box-shadow: 0 2px 6px #1d2227;
+    background: $dark-blue;
+  }
+
+  .change-mode:before {
+    content: '\f185';
+  }
+
+}
+
+.site-header {  
+  box-shadow: 0 2px 6px #CCC;
+  background: white;
+  
+  .wrapper{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $site-padding;
+  }
+
+}
+
+.site-title {
+  margin: 0;
+  font-size: 22px;
+}
+
+.change-mode{
+  color: inherit;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 16px;
+  
+  &:before{
+    content: '\f186';
+    font-family: FontAwesome;
+    margin-right: 10px;
+  }
+}
+
+@include smartphone {
+  .site-header .wrapper{
+    padding: 0 15px;
+  }
+
+  .site-title{
+    font-size: 16px;
+  }
+  .change-mode{
+    font-size: 14px;
+  }
+}

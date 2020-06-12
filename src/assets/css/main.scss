@@ -1,0 +1,104 @@
+@import './variables.scss';
+
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,600,800");
+
+/* NORMALIZE */
+
+body, html {
+  margin:0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+*{
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+h1, h2 {
+  margin: inherit;
+}
+
+button{
+  background: none;
+  border:none;
+  cursor: pointer;
+}
+
+ul{
+ list-style: none;
+ padding: 0;
+}
+
+strong{
+  font-weight: 800;
+}
+
+#app,
+#app > div {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar{
+  width: 7px;
+  background: #DDD;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #AAA;
+  border-radius: 5px;
+}
+
+/* HERE THE FUN STARTS */
+
+.dark-mode{
+  color: $white;
+  background: $very-dark-blue;
+}
+
+.light-mode{
+  color: $very-dark-blue;
+  background: $very-light-gray;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.countries-wrapper {
+  padding: $site-padding;
+  display: grid;
+  grid-template-columns: repeat(4, calc(25% - 50px));
+  grid-gap: 80px 0;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+@include desktop-small {
+  .countries-wrapper {
+      grid-template-columns: repeat(3, calc(33% - 20px));
+      grid-gap: 40px 0;
+  }
+}
+
+@include tablet-small {
+  .countries-wrapper {
+      grid-template-columns: repeat(2, calc(50% - 20px));
+  }
+}
+
+@include smartphone {
+  .countries-wrapper {
+      grid-template-columns: initial;
+  }
+
+  .countries-wrapper {
+    padding: $site-padding-mobile;
+  }
+
+}

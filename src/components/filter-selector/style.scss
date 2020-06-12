@@ -1,0 +1,141 @@
+@import '../../assets/css/variables.scss';
+
+.search-filter {
+  padding: $site-padding;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#country-search {
+  width: 450px;
+  height: 55px;
+  padding: 0 10px 0 50px;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: $shadow-light-mode;
+  border-radius:$border-radius;
+  font-size: 16px;
+}
+
+.search-wrapper:before {
+  content: "\f002";
+  position: absolute;
+  top: 19px;
+  left: 15px;
+  font-family: FontAwesome, sans-serif;
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.search-region {
+  width: 200px;
+  height: 55px;
+  display: block;
+  box-shadow: $shadow-light-mode;
+  overflow: hidden;
+  position: relative;
+  border-radius:$border-radius;
+  cursor:pointer;
+  background: $white;
+  font-size: 14px;
+
+  &:before {
+    content: '\f078';
+    display: block;
+    font-size: 13px;
+    font-family: FontAwesome, sans-serif;
+    position: absolute;
+    top: 20px;
+    right: 15px
+  }
+
+  
+.region-dropdown-title {
+  padding: 0 30px;
+  height: 55px;
+  display: block;
+  line-height: 55px;
+}
+
+
+  &.active {
+    overflow: inherit;
+  }
+
+  .select-region {
+    position: absolute;
+    top: 43px;
+    width: 100%;
+    padding: 0 30px;
+    background: $white;
+    box-shadow: $shadow-light-mode;
+    border-radius: $border-radius
+  }
+  
+  .select-region li{
+    margin: 10px 0
+  }
+  
+}
+
+.dark-mode {
+  #country-search,
+  .search-region,
+  .search-region .select-region{
+    background: $dark-blue;
+    color: $white;
+    box-shadow: $shadow-dark-mode;
+
+    &::placeholder{
+      color: $white;
+    }
+  }
+}
+
+@include tablet-small {
+  #country-search {
+    width: 55%;
+  }
+}
+
+@include smartphone {
+
+  .search-wrapper{
+    width: 100%;
+  }
+
+  .search-filter {
+    flex-direction: column;
+    height: 130px;
+  }
+
+  #country-search {
+    width: 100%;
+  }
+
+  .search-filter {
+    padding: $site-padding-mobile;
+    margin: 30px 0;
+    align-items: flex-start;
+  }
+
+  #country-search,
+  .search-region,
+  .search-region .region-dropdown-title {
+      height: 50px;
+  }
+
+  .search-region .region-dropdown-title {
+      line-height: 50px;
+  }
+
+  .search-region:before {
+      top: 17px;
+  }
+
+}
