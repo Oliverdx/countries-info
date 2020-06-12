@@ -6,10 +6,19 @@
   height: 40px;
   line-height: 40px;
   border-radius: $border-radius;
-  padding: 0 30px;
+  padding: 0 30px 0 25px;
   margin-left: 3px;
   cursor:pointer;
-  background: #FFF;
+  background: $white;
+
+  &:before {
+    content: "\f060";
+    display: block;
+    font-family: FontAwesome, sans-serif;
+    float: left;
+    margin-right: 10px;
+  }
+
 }
 
 .info-window{
@@ -52,7 +61,7 @@
     }
 
     .flag-img{
-      box-shadow: 0 0 2px #CCC;
+      box-shadow: $shadow-light-mode;
     }
 
     .country-info {
@@ -98,7 +107,7 @@
 
       button {
         box-shadow: $shadow-light-mode;
-        background: #FFF;
+        background: $white;
         margin:   5px;
         padding: 5px 10px;
         cursor:pointer;
@@ -109,3 +118,58 @@
 
 }
 
+.dark-mode {
+
+  .country-single:not(.active-country),
+  .country-single .backBtn,
+  .country-single .border-countries button{
+    background: $dark-blue;
+    color: $white;
+  }
+
+  .backBtn,
+  .country-single:not(.active-country),
+  .country-single .flag-img,
+  .country-single button,
+  .country-single .border-countries button {
+    box-shadow: $shadow-dark-mode;
+  }
+}
+
+@include tablet-small {
+
+  .backBtn {
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    border-radius: 0;
+  }
+
+  .info-window .info-wrapper {
+      grid-template-columns: 100%;
+      grid-gap: 35px;
+  }
+
+  .country-single.active-country {
+    .infos {
+      grid-template-columns: 100%;
+      grid-gap: 0;
+      grid-auto-flow: row;
+
+      p:nth-child(6) {
+        margin-top: 40px;
+      }
+
+    }
+
+    .border-countries {
+        flex-direction: column;
+        margin-bottom: 30px;
+
+      strong {
+        margin: 0 0 15px;
+      }
+    }
+  }
+
+}
