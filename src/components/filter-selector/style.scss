@@ -105,6 +105,10 @@
 
 @include smartphone {
 
+  .search-wrapper{
+    width: 100%;
+  }
+
   .search-filter {
     flex-direction: column;
     height: 130px;
