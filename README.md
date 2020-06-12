@@ -10,10 +10,10 @@ Proudly powered by [Node](https://nodejs.org/en/download/), to run certificate y
 To make this project was used the version 10.16.3.
 
 ### Other Technologies
-[Babel](https://babeljs.io/)
-[React](https://reactjs.org/)
-[Sass](https://sass-lang.com/)
-[Webpack](https://webpack.js.org/)
+* [Babel](https://babeljs.io/)
+* [React](https://reactjs.org/)
+* [Sass](https://sass-lang.com/)
+* [Webpack](https://webpack.js.org/)
 
 ## Install Instructions
 
@@ -43,4 +43,4 @@ Will be generated a dist folder with the application optimized
 - [ ] Speed improvements
 
 ## Authors
-Made By (Vanderlei Oliveira)[https://oliverdx.com.br]
+Made By [Vanderlei Oliveira](https://oliverdx.com.br)
